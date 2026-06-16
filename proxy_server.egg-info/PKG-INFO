@@ -1,4 +1,16 @@
-# Proxy-Server-for-Claude-Code
+Metadata-Version: 2.4
+Name: proxy-server
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: black>=26.5.1
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: fastapi>=0.137.1
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: uvicorn>=0.49.0
+
+# Ollama Proxy Server
 
 A resilient proxy server that forwards requests to Ollama Cloud with intelligent API key management, automatic failover, and load balancing.
 
@@ -32,8 +44,8 @@ A resilient proxy server that forwards requests to Ollama Cloud with intelligent
 git clone https://github.com/pankaj-2708/Proxy-Server-for-Claude-Code
 cd Proxy-Server-for-Claude-Code
 
-# Install in editable mode (Required for local development to load the .env file)
-pip install -e .
+# Install dependencies
+pip install .
 ```
 
 
@@ -41,7 +53,7 @@ pip install -e .
 
 ### Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env` file in the project's pro:
 
 ```env
 # Your Ollama Cloud API Key(s)
