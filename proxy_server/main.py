@@ -10,6 +10,9 @@ load_dotenv()
 # Ollama Cloud configuration
 OLLAMA_CLOUD_URL = os.getenv("OLLAMA_CLOUD_URL", "https://ollama.com")
 
+HOST = "127.0.0.1"
+PORT = os.getenv("PORT",10001)
+
 # Parse all OLLAMA_API_KEY_N entries from environment
 API_KEY_PREFIX = "OLLAMA_API_KEY_"
 api_keys = []
@@ -184,9 +187,10 @@ async def v1_proxy_request(request: Request, path: str):
         detail=f"Resource exhausted - All API keys failed. Errors: {' | '.join(all_errors)}"
     )
 
-
-if __name__ == "__main__":
+def main():
     import uvicorn
 
-    port = int(os.getenv("PORT", 10001))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run(app, host=HOST ,port=PORT)
+    
+if __name__ == "__main__":
+    main()
